@@ -1,184 +1,2276 @@
-.counter {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  line-height: 1.4em;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1.4em;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  border: none;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --mizeBlue: #0692E7;
+  --mizeNavy: #000C1B;
+  --red: #F43C47;
+  --orange: #FF8326;
+  --yellow: #FFBB00;
+  --green: #12BEA8;
+  --blue: #4C6EF5;
+  --purple: #9D4EDD;
+  --f4: #f4f4f4;
+  --eee: #eeeeee;
+  --ddd: #dddddd;
+  --ccc: #cccccc;
+  --bbb: #bbbbbb;
+  --aaa: #aaaaaa;
+  --txt2: #222222;
+  --txt4: #444444;
+  --txt6: #666666;
+  --txt8: #888888;
+  --bgRed: rgba(244, 60, 71, 0.1);
+  --bgMizeBlue: rgba(6, 146, 231, 0.1);
+  --bgWhite02: rgba(255, 255, 255, 0.2);
+}
+
+/* dispaly Set */
+
+.discountModal,
+.paymentModal,
+.paymentCardModal,
+.installmentModal,
+.adVideo,
+.totalPrice,
+.previousBtn,
+.recepitModal,
+.filterModal,
+.refundSelectModal,
+.dailyDetailView,
+.weeklyDetailView,
+.monthlyDetailView,
+.selectDateDetailView,
+.midCashCheckModal,
+.paymentModalBtn,
+.voucherModal {
+  display: none !important;
+}
+
+.discountModal.active,
+.paymentModal.active,
+.paymentCardModal.active,
+.installmentModal.active,
+.completeModal.active,
+.adVideo.active,
+.previousBtn.active,
+.receiptModal.active,
+.filterModal.active,
+.refundSelectModal.active,
+.midCashCheckModal.active,
+.paymentModalBtn.active,
+.voucherModal.active {
+  display: flex !important;
+}
+
+.selectDropdown.active,
+.totalPrice.active,
+.dailyDetailView.active,
+.weeklyDetailView.active,
+.monthlyDetailView.active,
+.selectDateDetailView.active {
+  display: block !important;
+}
+
+/* S T A R T */
+.container {
+  /* background-color: aqua; */
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 헤더 */
+.header {
+  background-color: var(--mizeNavy);
+  color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+  height: 52px;
 }
 
-.hero {
+.header>.leftHeader>.hedaerMenuBtn {
+  font-size: 30px;
+  width: 52px;
+  height: 52px;
+  /* border-radius: 4px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header>.leftHeader>.hedaerMenuBtn:hover {
+  background-color: var(--bgWhite02);
+}
+
+.rightHeader {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.rightHeader>.sellerName,
+.rightHeader>.realTime {
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.rightHeader>.sellerName {
+  opacity: 0.5;
+}
+
+.header>.rightHeader>.logoutBtn {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: var(--bgWhite02);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.header>.rightHeader>.logoutBtn:hover {
+  background-color: var(--red);
+}
+
+/* 바디 */
+.body {
+  display: flex;
+  height: calc(100vh - 52px);
+}
+
+.leftBody {
+  flex: 1;
+  background-color: var(--eee);
+  overflow: hidden;
   position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
 }
 
-#center {
+.leftBodyHeader {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--ddd);
+  padding-left: 20px;
+  height: 58px;
+}
+
+.leftBodyHeader>.categoryMenuItem {
+  height: 58px;
+}
+
+.categoryMenu {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+
+.categoryMenuItem {
+  min-width: 120px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.categoryMenuItem.active {
+  border-bottom: 3px solid var(--black);
+  font-weight: 600;
+}
+
+.leftBodyContent {
+  height: calc(100% - 58px);
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.posItemBox {
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  /* grid-template-columns: repeat(auto-fit, minmax(165px, 1fr)); */
+}
+
+.posItem {
+  min-width: 165px;
+  width: 165px;
+  height: 130px;
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-#next-steps {
+.posItemInfo {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  flex-direction: column;
+  gap: 5px;
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+.posItemName {
+  font-size: 16px;
+  font-weight: 600;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
+.posItemPrice {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.posItemNum {
+  text-align: end;
+}
+
+.posItemNum>span {
+  display: inline-block;
+  padding: 3px 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.bgRed {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.bgOrange {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.bgYellow {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+.bgGreen {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.bgMizeBlue {
+  background-color: var(--mizeBlue);
+  color: var(--white);
+}
+
+.bgBlue {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.bgPurple {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.posItemMore {
+  background-color: transparent;
+  border: 1px solid var(--ddd);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  color: var(--aaa);
+}
+
+.posItemMore:hover {
+  filter: brightness(90%);
+}
+
+.rightBody {
+  width: 300px;
+  border-left: 1px solid var(--ddd);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.rightBodyHeader {
+  border-bottom: 1px solid var(--ddd);
+  height: 58px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.totalNumBox {
   display: flex;
   gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  padding: 8px;
+  align-items: center;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.totalNumLabel {
+  color: var(--txt6);
+  font-size: 14px;
 }
 
-.ticks {
-  position: relative;
+.totalNum {
+  color: var(--mizeBlue);
+  font-weight: 600;
+}
+
+.allDeleteBtn {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.redBtn {
+  background-color: var(--bgRed);
+  color: var(--red);
+  cursor: pointer;
+}
+
+.txtRed {
+  color: var(--red);
+}
+
+.txtBlue {
+  color: var(--mizeBlue);
+}
+
+.txtGray {
+  color: var(--txt6);
+}
+
+.rightBodyContent {
+  flex: 1;
+  height: calc(100% - 148px);
+  overflow-y: auto;
+}
+
+.selectedListItem {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: 1px solid var(--ddd);
+}
+
+.selectedListItemInfo,
+.selectedListItemBtnBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selectedListItemInfo {
+  font-size: 16px;
+}
+
+.selectedItemTitle {
+  font-weight: 600;
+}
+
+.selectedItemPrice {
+  opacity: 0.8;
+}
+
+.selectedItemCanDelete {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.selectedListItemCountBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.countNum {
+  width: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.countNumInput {
+  height: 32px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-weight: 600;
+  outline: none;
+  text-align: center;
+}
+
+.countNumInput:focus {
+  border-color: #0692E7;
+  box-shadow: 0 0 0 2px rgba(6, 146, 231, .15);
+}
+
+.downNum,
+.upNum {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.deleteBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.paymentBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 90px;
+  font-size: 24px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.grayBtn {
+  background-color: var(--f4);
+  color: var(--txt6);
+}
+
+.softBlueBtn {
+  background-color: #0692E71A;
+  /* 배경 */
+  color: #0692E7;
+  /* 텍스트 */
+}
+
+/* 호버 시 약간 강조 */
+.softBlueBtn:hover {
+  background-color: #0692E733;
+}
+
+/* 공통 disabled 처리(있으면) */
+.softBlueBtn.disabled,
+.softBlueBtn[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.primaryBtn {
+  background-color: var(--mizeBlue);
+  color: var(--white);
+}
+
+.downNum:hover,
+.upNum:hover,
+.redBtn:hover,
+.primaryBtn:hover {
+  opacity: 0.8;
+}
+
+.rightBodyFooter>.footerBtnBox {
+  display: flex;
+}
+
+.rightBodyFooter>.footerBtnBox>.previousBtn {
+  width: 100px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  border: 1px solid var(--ddd);
+  border-left: none;
+}
+
+.totalPrice {
+  padding: 15px;
+  text-align: end;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.totalPrice>b {
+  font-size: 28px;
+  color: var(--mizeBlue);
+}
+
+/* 모달 */
+.modalBg {
   width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+.bodyModal {
+  background-color: var(--white);
+  width: 555px;
+  height: 470px;
+  border-radius: 12px;
+  position: relative;
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+.bodyModalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
+  border-bottom: 1px solid var(--ddd);
+}
+
+.categoryMenuBox {
+  padding-left: 25px;
+}
+
+.bodyModalContent {
+  padding: 25px;
+  display: flex;
+  gap: 50px;
+  overflow: hidden;
+}
+
+.bodyModalLeftContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.discountItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  height: 60px;
+  background-color: var(--white);
+  color: var(--txt4);
+  border: 1px solid var(--ddd);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.discountItem .persent {
+  color: inherit;
+}
+
+/* 선택(적용)된 할인 카드 */
+.discountItem.selected {
+  background-color: #0692E70D;
+  /* 연파랑 배경 */
+  border-color: #0692E7;
+  /* 보더 파랑 */
+  color: #0692E7;
+  /* 텍스트 파랑 */
+}
+
+.discountItem:hover {
+  background-color: var(--bgMizeBlue);
+  color: var(--mizeBlue) !important;
+  border: 1px solid var(--mizeBlue);
+}
+
+.discountItem:hover>.persent {
+  color: var(--mizeBlue) !important;
+}
+
+.bodyModalRightContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.keypadBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.numInputBox {
+  width: 215px;
+  height: 55px;
+  position: relative;
+}
+
+.numInputBox>input {
+  box-sizing: border-box;
+  width: 215px;
+  height: 53px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--ddd);
+  outline: none !important;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.numInputBox>input::placeholder {
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.unitBtnBox {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.unitBtn {
+  width: 31px;
+  height: 31px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1.4em;
+}
+
+.unitBtn.selected {
+  background-color: var(--txt2);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.unitBtn:hover {
+  opacity: 0.7;
+}
+
+.keypad {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, minmax(50px, auto));
+}
+
+.keypad>.numBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #12BEA8; */
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--txt2);
+  border-radius: 8px;
+}
+
+.keypad>.numBtn:hover {
+  background-color: var(--f4);
+}
+
+.btnBox {
+  display: flex;
+  gap: 10px;
+}
+
+.btnBox>div {
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4em;
+  cursor: pointer;
+}
+
+.btnBox>.cancleBtn {
+  width: 35%;
+}
+
+.btnBox>.enterBtn {
+  width: 65%;
+}
+
+/* 결제수단 선택 모달 */
+.paymentMenu {
+  display: flex;
+  padding: 10px;
+}
+
+.paymentMenuItem {
+  width: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  color: var(--txt6);
+  padding: 8px;
+}
+
+.paymentMenuItem.active {
+  background-color: var(--bgMizeBlue);
+  color: var(--mizeBlue);
+}
+
+.paymentMenuItem.none {
+  background-color: var(--white);
+  color: var(--white);
+  cursor: default;
+}
+
+.paymentModal .bodyModal {
+  position: relative;
+}
+
+.paymentModal .deleteBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.paymentModal .bodyModalContent {
+  height: 100%;
+}
+
+.paymentModal .bodyModalPaymentBtnBox {
+  flex: 1;
+}
+
+.bodyModalContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bodyModalTitle {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+.bodyModalPaymentBtnBox {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.paymentBtnItem {
+  width: calc((100% - 20px) / 3);
+  background-color: var(--f4);
+  color: var(--txt4);
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.paymentBtnItem>img {
+  width: 70px;
+  height: 70px;
+}
+
+.paymentBtnItem:hover {
+  filter: brightness(95%);
+}
+
+.discountListItem {
+  color: var(--red);
+}
+
+/* 결제방식모달 */
+.bodyModalCenterFlexBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.bodyModalTitleBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bodyModalSubTitle>b {
+  color: var(--mizeBlue);
+  font-weight: 600;
+}
+
+.paymentImg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerBtnBox {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  /* background-color: #0692E7; */
+}
+
+.footerBtnBox>.cancleBtn {
+  width: 80px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4em;
+  cursor: pointer;
+}
+
+/* 할부모달 */
+.installmentDes {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+
+.installmentDes input {
+  width: 240px;
+  padding-right: 60px;
+}
+
+.installmentDes .unitBtnBox {
+  right: -15px;
+}
+
+.installmentDes .unitBtnBox .unitBtn {
+  width: 45px;
+}
+
+.installmentMonthBox {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.installmentMonthBox>.installmentMonthItem {
+  width: 90px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  gap: 5px;
+  cursor: pointer;
+  color: var(--txt4);
+}
+
+.installmentMonthItem.selectBtn {
+  width: 105px !important;
+}
+
+.signBox {
+  border: 1px solid var(--ddd);
+  flex: 1;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ccc);
+}
+
+.selectDropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  background-color: var(--white);
+  width: 105px;
+  height: 180px;
+  border-radius: 8px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.selectDropdownItem {
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.selectDropdownItem:hover {
+  color: var(--mizeBlue);
+}
+
+/* 완료 모달 */
+.bodyModalIconBoxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.bodyModalIconBox {
+  padding: 50px 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.bodyModalIconBox>img {
+  width: 100px;
+  height: 100px;
+}
+
+.bodyModalBigTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.bodyModalBigTitle>b {
+  color: var(--mizeBlue);
+}
+
+.bodyModalBigTitle>.bodyModalTxt {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--txt4);
+  margin-top: 10px;
+}
+
+.receiptBtnBox {
+  display: flex;
+  gap: 10px;
+}
+
+.receiptBtnBox>div {
+  width: 200px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.receiptBtnBox>div:hover {
+  filter: brightness(95%);
+}
+
+.completeModal .footerBtnBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.completeModal .footerBtnBox .countdownInfo {
+  color: var(--txt8);
+}
+
+.completeModal .footerBtnBox .countdownInfo>b {
+  color: var(--mizeBlue);
+  font-weight: 600;
+}
+
+.footerBtnBox .closeBtn {
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.bodyModalFlexBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* 현금결제 모달 */
+.cashModalBody {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cashModalContent {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  /* height: 100%; */
+}
+
+.cashModalHeader {
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  height: 100px;
+}
+
+.totalPaymentBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.changePaymentBox {
+  background-color: var(--f4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.totalPaymentLabel,
+.changePaymentLabel {
+  color: var(--txt4);
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+.totalPaymentMoney,
+.changePaymentMoney {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.4em;
+}
+
+.totalPaymentMoney b {
+  color: var(--mizeBlue);
+}
+
+.changePaymentMoney b {
+  color: var(--red);
+}
+
+.cashModalHeaderRight {
+  width: 205px;
+}
+
+.cashModalContentRight {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Cash 모달에서 키패드 위 여백 20px */
+.cashModalContentRight .keypad {
+  margin-top: 20px;
+}
+
+.cashModalContent {
+  flex: 1;
+}
+
+/* 본문 영역 높이 확보 */
+.cashModalContentRight {
+  display: flex;
+  flex-direction: column;
+}
+
+.cashModalContentRight .btnBox {
+  margin-top: auto;
+}
+
+.cashModalContentRight .keypad .numBtn {
+  width: 65px;
+}
+
+.cashModalContentRight .btnBox {
+  display: flex;
+  gap: 10px;
+}
+
+.cashModalContentRight .btnBox .grayBtn {
+  width: 80px;
+}
+
+.cashModalContentRight .btnBox .primaryBtn {
+  flex: 1;
+}
+
+.cashModalContentLeft {
+  display: flex;
+  flex-direction: column;
+  padding-top: 43px;
+  gap: 5px;
+}
+
+.inputLabelBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputLabelBox .numInputBox {
+  width: 100%;
+}
+
+.inputLabelBox .numInputBox>input {
+  width: 240px;
+}
+
+.inputLabelBox .numInputBox>.unitBtnBox {
+  right: 0px;
+}
+
+.inputLabel {
+  font-size: 18px;
+  color: var(--txt4);
+}
+
+.receivedBtnBox {
+  width: 240px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.receivedBtn {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: calc(50% - 2.5px);
+  font-weight: 600;
+}
+
+.receivedBtn.active {
+  color: var(--mizeBlue);
+  background-color: var(--bgMizeBlue);
+}
+
+/* 현금영수증 모달 */
+.cashReceiptSelectModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.cashReceiptSelectModaltitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.cashReceiptBtnBox {
+  display: flex;
+  gap: 10px;
+  height: 200px;
+}
+
+.cashReceiptBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 200px !important;
+  width: 200px;
+  box-sizing: border-box;
+  padding: 30px 0;
+}
+
+.cashReceiptBtn>img {
+  width: 109px;
+  height: 109px;
+}
+
+.cashReceiptBtn>div {
+  font-size: 18px;
+}
+
+/* 현금영수증 신청 */
+.cashModalTitle>div {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.cashModalTitle>p {
+  margin-top: 10px;
+  color: var(--txt4);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cashReceiptMenu {
+  padding: 5px;
+  border-radius: 8px;
+  background-color: var(--f4);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  text-align: center;
+}
+
+.cashReceiptMenuItem {
+  width: 50%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 15px;
+  color: var(--txt6);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.cashReceiptMenuItem.active {
+  background-color: var(--white);
+  color: var(--mizeBlue);
+}
+
+.cashModalContent .numInputBox>input {
+  width: 240px !important;
+}
+
+.personalReceipt,
+.corporationReceipt {
+  display: none;
+}
+
+.personalReceipt.active,
+.corporationReceipt.active {
+  display: flex;
+}
+
+/* 모바일티켓 전송 모달 */
+.mobileTickteModalBody {
+  position: relative;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 20px;
+}
+
+.cashModalContentLeft {
+  padding-top: 0;
+}
+
+/* 다른 모달에서만 필요하면 개별 보정 */
+.cashModalBody .cashModalContentLeft {
+  padding-top: 43px;
+  /* 예: 기존 cash 모달만 */
+}
+
+.mobileTickteModalBody .cashModalContentRight .keypad {
+  margin-bottom: 0px;
+  /* 버튼 위에 여백 */
+}
+
+.mobileTickteModalBody .cashModalContentRight .btnBox {
+  margin-top: 0;
+  /* auto 해제 → 더 이상 키패드 위로 끌어올리지 않음 */
+}
+
+.checkMarkContainer,
+.checkMarkBox {
+  position: relative;
+}
+
+.checkMarkContainer input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  margin: -1px;
+  clip-path: inset(50%);
+}
+
+.check-icon {
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid gray;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.check-icon::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  width: 30%;
+  height: 55%;
+  left: 47%;
+  top: 53%;
+  transform: translateX(-50%) translateY(-70%) rotateZ(40deg);
+  border-right: 2px solid var(--txt8);
+  border-bottom: 2px solid var(--txt8);
+}
+
+.checkMarkBox label {
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkMarkContainer input[type="checkbox"]+.checkMarkBox .check-icon {
+  border-color: var(--txt8);
+  background-color: var(--white);
+}
+
+.checkMarkContainer input[type="checkbox"]+.checkMarkBox .check-icon::before {
+  border-color: var(--txt8);
+}
+
+.checkMarkContainer input[type="checkbox"]:checked+.checkMarkBox .check-icon {
+  border-color: var(--txt4);
+  background-color: var(--txt4);
+}
+
+.checkMarkContainer input[type="checkbox"]:checked+.checkMarkBox .check-icon::before {
+  border-color: var(--white);
+}
+
+.paperTicketBtn {
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--txt8);
+}
+
+.mobileTickteModalBody .cashModalContent {
+  flex: 1;
+  overflow: hidden;
+}
+
+.cashModalContentLeft {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 15px;
+}
+
+.scrollBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobileTickteModal .cashModalContent {
+  gap: 30px;
+}
+
+.cashModalContentLeft::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cashModalContentLeft::-webkit-scrollbar-track {
+  background-color: var(--f4);
+  border-radius: 5px;
+}
+
+.cashModalContentLeft::-webkit-scrollbar-thumb {
+  background-color: var(--txt6);
+  border-radius: 5px;
+}
+
+.mobileTickteModal .cashModalContentRight {
+  justify-content: end;
+}
+
+/* 로그인 */
+.bgGray {
+  background-color: var(--eee);
+  padding: 25px;
+}
+
+.logoBox img {
+  height: 30px;
+}
+
+.loginForm {
+  background-color: var(--white);
+  padding: 30px;
+  width: 370px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loginForm .title {
+  padding: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.fourNumberBox {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.fourNumber {
+  width: 55px;
+  height: 55px;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 55px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ddd);
+  border-radius: 8px;
+}
+
+.fourNumber:focus {
+  outline-color: var(--mizeBlue);
+}
+
+.fourNumber::placeholder {
+  font-weight: 400;
+}
+
+.roundBtn {
+  height: 55px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.codeNumber {
+  height: 55px;
+  width: 250px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ddd);
+  border-radius: 8px;
+}
+
+.codeNumber:focus {
+  outline-color: var(--mizeBlue);
+}
+
+.codeNumber::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.loginForm .keypad .refreshBtn,
+.loginForm .keypad .backBtn {
+  color: var(--txt8);
+}
+
+/* 경고 알림창 모달 */
+.alertModal .footerBtnBox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.alertModal .footerBtnBox .cancleBtn {
+  width: 300px !important;
+}
+
+.alertModal .footerBtnBox .closeBtn {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 좌측 패널 기준으로만 오버레이 펼치기 (뒤 클릭 막기) */
+.leftBody .modalBg.discountModal,
+.leftBody .modalBg.paymentModal {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+
+  pointer-events: auto;
+  /* ← 뒤에 클릭 막기 */
+}
+
+.leftBody .modalBg.discountModal .bodyModal,
+.leftBody .modalBg.paymentModal .bodyModal {
+  position: static !important;
+  transform: none;
+}
+
+.leftBody .modalBg.discountModal,
+.leftBody .modalBg.paymentModal {
+  pointer-events: auto;
+  /* 오버레이도 클릭 차단 */
+}
+
+.leftBody .modalBg.discountModal .bodyModal,
+.leftBody .modalBg.paymentModal .bodyModal {
+  pointer-events: auto;
+  /* 모달은 당연히 이벤트 받음 */
+}
+
+/* 할인 모달(좌측) 버튼만 살짝 위로 끌어올리기 — 박스 크기는 고정 유지 */
+.leftBody .discountModal .bodyModalContent {
+  padding-bottom: 16px;
+  /* 기존 25px → 16px (하단 여백만 살짝 줄임) */
+}
+
+.leftBody .discountModal .bodyModalRightContent {
+  gap: 8px;
+  /* 기존 15px → 8px (키패드↔버튼 간격 축소) */
+}
+
+/* 더 위로 올리고 싶으면 - 값 조금 더 키워도 됨(예: -10px) */
+.leftBody .discountModal .btnBox {
+  margin-top: -6px;
+  /* 버튼 박스를 위쪽으로 살짝 당김 */
+}
+
+.editBtn {
+  background-color: var(--bgWhite02);
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  background-color: var(--mizeBlue);
+  color: var(--white);
+}
+
+.colorPalette {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.colorCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--white);
+}
+
+.colorCircle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.colorPaletteBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.colorLabel {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.colorPalette {
+  display: flex;
+  justify-content: center;
+  /* ← 중앙 정렬 */
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  /* 위쪽 여백 살짝 추가 */
+}
+
+.colorCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.colorCircle.selected {
+  border: 2px solid var(--mizeBlue);
+}
+
+.editHint {
+  padding: 20px;
+  color: var(--txt6);
+}
+
+/* 선택된 상품 강조 */
+.posItem.selected {
+  border: 3px solid #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+}
+
+/* 색상 팔레트 원 */
+.colorCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+/* 체크마크 중앙 정렬 */
+.checkMark {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.editFooterBtnBox {
+  position: absolute;
+  /* rightBody 내부에서만 위치 */
+  bottom: 20px;
+  /* 하단 여백 */
+  left: 0;
+  width: 100%;
+  /* rightBody 가로만 채움 */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  /* 좌우 여백 */
+  background: transparent;
+}
+
+.bigBtn {
+  flex: 1;
+  padding: 20px 0;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+.cash-in {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.cash-out {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.emptyCart {
+  font-size: 16px;
+  color: var(--aaa);
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.selectedListItem.active {
+  background-color: var(--bgMizeBlue);
+}
+
+/* 전면 dim + 중앙 정렬 */
+.modalBg.active {
+  display: flex !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .5);
+  z-index: 9999;
+}
+
+/* CashCheckModal 전용 */
+.cashModal {
+  background: var(--white);
+  width: 755px;
+  padding: 25px;
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 모든 브라우저에서 number input 화살표 제거 */
+
+/* 크롬, 사파리, 엣지 (WebKit 기반) */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* 파이어폭스 */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* 고객 페이지 */
+.headerlogo img {
+  height: 20px;
+  margin-left: 15px;
+}
+
+.customerPage .customerSelectList {
+  flex: 1 !important;
+}
+
+.customerPage .leftBody {
+  width: 424px !important;
+  flex: none;
+  background: var(--white);
+  border-left: 1px solid var(--ddd);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.customerPage .customerSelectList table {
+  width: 100%;
+}
+
+.customerPage .customerSelectList table th {
+  background: var(--f4);
+  padding: 15px 5px;
+  font-size: 16px;
+  color: var(--txt4);
+}
+
+.customerPage .customerSelectList table td {
+  padding: 14px 10px;
+  font-size: 20px;
+  border-bottom: 1px solid var(--eee);
+  text-align: center;
+  color: var(--black);
+}
+
+.customerPage .customerSelectList table tr td:last-child {
+  font-weight: 600;
+}
+
+.customerPage .leftBody>.emptyBox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customerPage .leftBody>.emptyBox .emptyBoxLogo {
+  height: 80px;
+  filter: grayscale(1);
+  opacity: 0.2;
+}
+
+.selectedListTotal {
+  border-top: 1px solid var(--ddd);
+}
+
+.selectedListTotalItem {
+  display: flex;
+}
+
+.selectedListTotalItem>* {
+  padding: 15px 25px;
+}
+
+.selectedListTotalItemTitle {
+  background-color: var(--f4);
+  border-bottom: 1px solid var(--eee);
+  width: 35%;
+  font-size: 20px;
+}
+
+.selectedListTotalItemValue {
+  border-bottom: 1px solid var(--eee);
+  flex: 1;
+  text-align: end;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.adVideo {
+  background-color: var(--black);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  color: var(--txt8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.adVideo>h1 {
+  font-size: 80px;
+}
+
+/* 결제수단 선택 모달에서 X 버튼이 모달 안에 고정되도록 */
+.leftBody .modalBg.paymentModal .bodyModal {
+  position: relative !important;
+  /* 절대배치 자식의 기준을 모달로 */
+}
+
+.leftBody .modalBg.paymentModal .deleteBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+}
+
+/* 할부 빠른선택 버튼 하이라이트 */
+.installmentModal .receivedBtn {
+  transition: background-color .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.installmentModal .receivedBtn.selected {
+  background: #2E7AFB;
+  /* 원하는 색 */
+  color: #fff;
+  border-color: #2E7AFB;
+}
+
+.installmentModal .receivedBtn.selected:hover {
+  filter: brightness(0.95);
+}
+
+/* (선택) 직접입력 사용 중일 때 입력칸 강조 */
+.installmentModal .numInputBox input.custom-active {
+  border-color: #2E7AFB;
+  box-shadow: 0 0 0 2px rgba(46, 122, 251, .15);
+}
+
+/* 결제 진행 모달 이미지가 모달 밖으로 넘치지 않도록 고정 */
+.paymentCardModal .bodyModal {
+  overflow: hidden;
+  /* 넘침 차단 */
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+}
+
+.paymentCardModal .paymentImg {
+  flex: 1;
+  min-height: 0;
+  /* flex 컨테이너에서 자식 높이 수축 허용 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px 12px;
+  /* 가장자리 여백 */
+  overflow: hidden;
+}
+
+.paymentCardModal .paymentImg img {
+  display: block;
+  max-width: 80% !important;
+  max-height: 80% !important;
+  height: auto;
+  object-fit: contain;
+  /* 비율 유지하며 내부에 맞춤 */
+}
+
+/* 할인 금액 + 삭제 버튼 묶음 */
+.discountPriceBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* 금액과 버튼 사이 간격 */
+}
+
+.discountListItem .selectedListItemInfo {
+  display: flex;
+  align-items: center;
+  /* ← 세로 중앙 정렬 */
+  gap: 8px;
+}
+
+/* 현금영수증: 탭 텍스트 줄바꿈 방지 + gap 보정 */
+.cashReceiptModal .cashReceiptMenu {
+  flex-wrap: nowrap;
+  /* 두 탭이 줄로 내려가지 않게 */
+}
+
+.cashReceiptModal .cashReceiptMenuItem {
+  width: calc(50% - 2.5px);
+  /* gap: 5px 보정 */
+  white-space: nowrap;
+  /* 줄바꿈 금지 */
+  word-break: keep-all;
+  /* 한글 단어 중간 분리 방지 */
+  /* 필요시 아래 두 줄로 넘침 대비 (선택) */
+  /* overflow: hidden;       
+  text-overflow: ellipsis;  */
+}
+
+/* 현금영수증 모달: 탭과 입력칸 폭 맞추기 + 줄바꿈 방지 */
+.cashReceiptModal {
+  --receiptW: 240px;
+  /* 입력칸과 동일 폭 */
+}
+
+.cashReceiptModal .cashReceiptMenu {
+  width: var(--receiptW);
+  flex-wrap: nowrap;
+  /* 두 탭이 아래로 안 떨어지게 */
+}
+
+.cashReceiptModal .numInputBox {
+  width: var(--receiptW);
+  /* 입력칸 래퍼도 동일 폭 */
+}
+
+.cashReceiptModal .cashModalContent .numInputBox>input {
+  width: var(--receiptW) !important;
+  /* 이미 240px이지만 동일 기준으로 고정 */
+}
+
+.cashReceiptModal .cashReceiptMenuItem {
+  flex: 1 0 0;
+  /* 두 탭을 균등 분배 */
+  width: auto;
+  /* 기존 width:50% 덮어쓰기 */
+  white-space: nowrap;
+  /* 줄바꿈 금지 */
+  word-break: keep-all;
+  /* 한글 단어 중간 분리 방지 */
+}
+
+/* 로그인 상단 바 (로고 ↔ 종료 버튼) */
+.loginTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* 종료 버튼 */
+.exitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 8px;
+  background: var(--bgWhite02);
+  color: var(--red);
+  border: 1px solid rgba(244, 60, 71, 0.35);
+  cursor: pointer;
+  transition: background-color .15s ease, border-color .15s ease, transform .05s ease;
+}
+
+.exitBtn:hover {
+  background: var(--bgRed);
+  border-color: var(--red);
+}
+
+.exitBtn:active {
+  transform: translateY(1px);
+}
+
+.exitBtn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.exitBtn svg {
+  font-size: 18px;
+  /* 아이콘 정렬 살짝 보정 필요시 line-height 조절 가능 */
+}
+
+/* 중간 시재 체크 */
+.midCashCheckModal .bodyModal {
+  padding: 25px;
+}
+
+.midCashCheckModal .bodyModalContent {
+  padding: 0px;
+}
+
+.midCashCheckModal .cashModalContentRight .keypad {
+  margin-top: 0px;
+}
+
+.midCashCheckModal .unitBtnBox {
+  margin-right: 10px;
+}
+
+/* 분할결제 플로우 */
+.modalHeaderBtnBox {
+  padding: 10px;
+}
+
+.modalHeaderBtn {
+  height: 35px;
+  padding: 0px 18px;
+  font-size: 16px;
+  line-height: 35px;
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--txt6);
+  cursor: pointer;
+}
+
+.modalHeaderBtn.active {
+  background-color: var(--bgMizeBlue);
+  color: var(--mizeBlue);
+}
+
+.paymentModalBtn .bodyModal {
+  display: flex;
+  flex-direction: column;
+}
+
+.paymentModalBtn .bodyModal .bodyModalContent {
+  flex: 1;
+}
+
+.paymentAll {
+  display: none;
+}
+
+.paymentAll.active {
+  display: block !important;
+}
+
+.paymentSplit {
+  display: none;
+}
+
+.paymentSplit.active {
+  display: block !important;
+}
+
+.bodyModalSplitPaymentBox {
+  flex: 1;
+}
+
+.voucherModal .keypad,
+.paymentSplit .bodyModalSplitPaymentBox .cashModalContentRight .keypad {
+  margin-bottom: 0px;
+}
+
+.paymentSplit .bodyModalSplitPaymentBox .totalPaymentBox {
+  margin-bottom: 32px;
+}
+
+.voucherModal .cashModalContentLeft {
+  margin-top: 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.voucherInputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }

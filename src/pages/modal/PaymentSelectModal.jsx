@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaXmark } from 'react-icons/fa6';
 
-import samsungpay from '../../assets/img/samsungpay.png';
-import applepay from '../../assets/img/applepay.png';
-import mobilepay from '../../assets/img/mobilepay.png';
+import samsungpay from '../../assets/img/samsungPay.png';
+import applepay from '../../assets/img/applePay.png';
+import mobilepay from '../../assets/img/mobilePay.png';
 import cash from '../../assets/img/cash.png';
 import card from '../../assets/img/card.png';
 import voucher from '../../assets/img/voucher.png';
